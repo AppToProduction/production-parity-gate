@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/VJO-JavaScript/production-parity-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/VJO-JavaScript/production-parity-gate/actions/workflows/ci.yml)
 
+![Production Parity Gate comparing preview and production across seven drift findings](assets/social-preview.png)
+
 A Node 20+ TypeScript CLI and GitHub Action that turns preview-to-production assumptions into reviewable evidence. It checks two declared environments without printing environment values.
 
 The included failing fixture catches all seven modeled finding classes:

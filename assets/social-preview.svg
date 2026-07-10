@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Production Parity Gate</title>
+  <desc id="description">A preview and production comparison reports seven drift findings across environment contracts, callbacks, endpoints, and Vite bundle leaks.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#0A2234"/>
+    </linearGradient>
+    <linearGradient id="previewCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B2A36"/>
+      <stop offset="1" stop-color="#09232E"/>
+    </linearGradient>
+    <linearGradient id="productionCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172735"/>
+      <stop offset="1" stop-color="#13212E"/>
+    </linearGradient>
+    <marker id="driftArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#FB7185"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#background)"/>
+  <circle cx="1170" cy="25" r="270" fill="#14B8A6" opacity="0.06"/>
+  <circle cx="25" cy="660" r="280" fill="#2DD4BF" opacity="0.04"/>
+
+  <g transform="translate(62 37)">
+    <path d="M54 4 104 23v40c0 34-20 61-50 74C24 124 4 97 4 63V23L54 4Z" fill="#0B2A3A" stroke="#2DD4BF" stroke-width="9" stroke-linejoin="round"/>
+    <rect x="23" y="37" width="25" height="57" rx="7" fill="#0E4F56" stroke="#67E8F9" stroke-width="4"/>
+    <rect x="60" y="37" width="25" height="57" rx="7" fill="#3A2130" stroke="#FB7185" stroke-width="4"/>
+    <path d="M48 50h12M48 66h12M48 82h12" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="35" cy="51" r="5" fill="#A7F3D0"/>
+    <circle cx="35" cy="66" r="5" fill="#A7F3D0"/>
+    <circle cx="35" cy="81" r="5" fill="#A7F3D0"/>
+    <path d="m67 49 11 11m0-11L67 60m0 14 11 11m0-11L67 85" stroke="#FDA4AF" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <text x="190" y="95" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="800" letter-spacing="-1.4">Production Parity Gate</text>
+  <text x="192" y="133" fill="#9CC4CC" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="600">Preview assumptions → production evidence</text>
+
+  <g>
+    <rect x="64" y="190" width="510" height="334" rx="25" fill="url(#previewCard)" stroke="#2DD4BF" stroke-width="3"/>
+    <rect x="64" y="190" width="510" height="72" rx="25" fill="#2DD4BF" opacity="0.09"/>
+    <circle cx="101" cy="226" r="15" fill="#2DD4BF"/>
+    <path d="m93 226 6 6 12-14" fill="none" stroke="#071827" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="129" y="234" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800">PREVIEW</text>
+    <text x="522" y="232" text-anchor="end" fill="#6EE7B7" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">DECLARED</text>
+
+    <rect x="91" y="281" width="456" height="49" rx="15" fill="#091E29" stroke="#2A6470" stroke-width="2"/>
+    <circle cx="117" cy="305" r="11" fill="#34D399"/>
+    <path d="m111 305 4 4 8-9" fill="none" stroke="#071827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="312" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">ENV CONTRACTS</text>
+    <text x="522" y="312" text-anchor="end" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">complete</text>
+
+    <rect x="91" y="341" width="456" height="49" rx="15" fill="#091E29" stroke="#2A6470" stroke-width="2"/>
+    <circle cx="117" cy="365" r="11" fill="#34D399"/>
+    <path d="m111 365 4 4 8-9" fill="none" stroke="#071827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="372" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">CALLBACKS</text>
+    <text x="522" y="372" text-anchor="end" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">registered</text>
+
+    <rect x="91" y="401" width="456" height="49" rx="15" fill="#091E29" stroke="#2A6470" stroke-width="2"/>
+    <circle cx="117" cy="425" r="11" fill="#34D399"/>
+    <path d="m111 425 4 4 8-9" fill="none" stroke="#071827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="432" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">ENDPOINTS</text>
+    <text x="522" y="432" text-anchor="end" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">/api · /ready</text>
+
+    <rect x="91" y="461" width="456" height="49" rx="15" fill="#091E29" stroke="#2A6470" stroke-width="2"/>
+    <circle cx="117" cy="485" r="11" fill="#34D399"/>
+    <path d="m111 485 4 4 8-9" fill="none" stroke="#071827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="492" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">VITE BUNDLE LEAKS</text>
+    <text x="522" y="492" text-anchor="end" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">none</text>
+  </g>
+
+  <g>
+    <rect x="706" y="190" width="510" height="334" rx="25" fill="url(#productionCard)" stroke="#FB7185" stroke-width="3"/>
+    <rect x="706" y="190" width="510" height="72" rx="25" fill="#FB7185" opacity="0.09"/>
+    <circle cx="743" cy="226" r="15" fill="#FB7185"/>
+    <path d="m736 219 14 14m0-14-14 14" stroke="#071827" stroke-width="4" stroke-linecap="round"/>
+    <text x="771" y="234" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800">PRODUCTION</text>
+    <text x="1170" y="232" text-anchor="end" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">OBSERVED</text>
+
+    <rect x="733" y="281" width="456" height="49" rx="15" fill="#211D2A" stroke="#6B3044" stroke-width="2"/>
+    <circle cx="759" cy="305" r="11" fill="#FB7185"/>
+    <path d="m754 300 10 10m0-10-10 10" stroke="#071827" stroke-width="3" stroke-linecap="round"/>
+    <text x="782" y="312" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">ENV CONTRACTS</text>
+    <text x="1164" y="312" text-anchor="end" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">missing + public</text>
+
+    <rect x="733" y="341" width="456" height="49" rx="15" fill="#211D2A" stroke="#6B3044" stroke-width="2"/>
+    <circle cx="759" cy="365" r="11" fill="#FB7185"/>
+    <path d="m754 360 10 10m0-10-10 10" stroke="#071827" stroke-width="3" stroke-linecap="round"/>
+    <text x="782" y="372" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">CALLBACKS</text>
+    <text x="1164" y="372" text-anchor="end" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">absent</text>
+
+    <rect x="733" y="401" width="456" height="49" rx="15" fill="#211D2A" stroke="#6B3044" stroke-width="2"/>
+    <circle cx="759" cy="425" r="11" fill="#FB7185"/>
+    <path d="m754 420 10 10m0-10-10 10" stroke="#071827" stroke-width="3" stroke-linecap="round"/>
+    <text x="782" y="432" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">ENDPOINTS</text>
+    <text x="1164" y="432" text-anchor="end" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">origin + paths drift</text>
+
+    <rect x="733" y="461" width="456" height="49" rx="15" fill="#211D2A" stroke="#6B3044" stroke-width="2"/>
+    <circle cx="759" cy="485" r="11" fill="#FB7185"/>
+    <path d="m754 480 10 10m0-10-10 10" stroke="#071827" stroke-width="3" stroke-linecap="round"/>
+    <text x="782" y="492" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="750">VITE BUNDLE LEAKS</text>
+    <text x="1164" y="492" text-anchor="end" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="650">detected</text>
+  </g>
+
+  <path d="M554 365h51" stroke="#FB7185" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 8" marker-end="url(#driftArrow)"/>
+  <path d="M675 365h29" stroke="#FB7185" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 8" marker-end="url(#driftArrow)"/>
+  <g>
+    <rect x="568" y="207" width="144" height="113" rx="24" fill="#421B2B" stroke="#FB7185" stroke-width="4"/>
+    <text x="640" y="266" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="850">7</text>
+    <text x="640" y="296" text-anchor="middle" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800">drift findings</text>
+  </g>
+
+  <text x="640" y="594" text-anchor="middle" fill="#B6D2D8" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="650" letter-spacing="0.1">TypeScript CLI · GitHub Action · React/Vite fixture · JSON + Markdown evidence</text>
+</svg>
