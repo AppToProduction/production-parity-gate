@@ -1,0 +1,20 @@
+2026-07-10 local verification transcript (concise)
+node: v24.16.0
+npm: 11.13.0
+
+compiled CLI / clean control
+status=pass findingCount=0 exitCode=0
+
+compiled CLI / findings control
+status=findings findingCount=7 exitCode=2
+codes=API_ENDPOINT_MISMATCH,CALLBACK_MISMATCH,CLIENT_BUNDLE_SECRET_LEAK,MISSING_SERVER_VAR,ORIGIN_MISMATCH,PUBLIC_SECRET_NAME,READINESS_ENDPOINT_MISMATCH
+
+clean install
+command=npm ci --no-audit --no-fund exitCode=0 installedPackages=238
+
+consolidated check
+command=npm run check exitCode=0
+typecheck=pass lint=pass build=pass tests=4/4 controls=pass repoValidation=pass secretScan=pass
+
+packaged GitHub Action adapter / clean control
+status=pass findingCount=0 exitCode=0

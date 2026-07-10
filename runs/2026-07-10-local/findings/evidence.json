@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "project": "checkout-findings-fixture",
+  "contractSha256": "b96b3ae435f8340cc2a136d48298107f9a507c26601dd453fdbf58f2f12d355f",
+  "generatedAt": "2026-07-10T21:03:06.699Z",
+  "status": "findings",
+  "findingCount": 7,
+  "checks": {
+    "environmentsChecked": [
+      "preview",
+      "production"
+    ],
+    "classesChecked": [
+      "MISSING_SERVER_VAR",
+      "PUBLIC_SECRET_NAME",
+      "ORIGIN_MISMATCH",
+      "CALLBACK_MISMATCH",
+      "API_ENDPOINT_MISMATCH",
+      "READINESS_ENDPOINT_MISMATCH",
+      "CLIENT_BUNDLE_SECRET_LEAK"
+    ]
+  },
+  "findings": [
+    {
+      "code": "API_ENDPOINT_MISMATCH",
+      "severity": "high",
+      "environment": "production",
+      "target": "endpoints.api",
+      "summary": "Observed API path /api/v2 does not match /api.",
+      "remediation": "Align the client API base path, gateway route, and deployed server route."
+    },
+    {
+      "code": "CALLBACK_MISMATCH",
+      "severity": "high",
+      "environment": "production",
+      "target": "callbackUrls",
+      "summary": "Missing declared callback URL(s): https://app.example.test/auth/callback.",
+      "remediation": "Register the exact declared callback URLs with the identity provider."
+    },
+    {
+      "code": "CLIENT_BUNDLE_SECRET_LEAK",
+      "severity": "high",
+      "environment": "production",
+      "target": "VITE_INTERNAL_API_TOKEN",
+      "summary": "The built client bundle contains the value assigned to VITE_INTERNAL_API_TOKEN; the value is redacted.",
+      "remediation": "Remove the variable from client code, rebuild, redeploy, and rotate the credential."
+    },
+    {
+      "code": "MISSING_SERVER_VAR",
+      "severity": "high",
+      "environment": "production",
+      "target": "STRIPE_WEBHOOK_SECRET",
+      "summary": "Required server variable STRIPE_WEBHOOK_SECRET is missing or empty.",
+      "remediation": "Add the variable through the environment's secret store before promotion."
+    },
+    {
+      "code": "ORIGIN_MISMATCH",
+      "severity": "high",
+      "environment": "production",
+      "target": "origin",
+      "summary": "Observed origin https://preview.example.test does not match declared origin https://app.example.test.",
+      "remediation": "Align the deployment origin and provider configuration before promotion."
+    },
+    {
+      "code": "PUBLIC_SECRET_NAME",
+      "severity": "high",
+      "environment": "production",
+      "target": "VITE_INTERNAL_API_TOKEN",
+      "summary": "Sensitive-looking variable VITE_INTERNAL_API_TOKEN uses a declared public prefix.",
+      "remediation": "Move this value behind a server-only variable and rotate any deployed credential."
+    },
+    {
+      "code": "READINESS_ENDPOINT_MISMATCH",
+      "severity": "medium",
+      "environment": "production",
+      "target": "endpoints.readiness",
+      "summary": "Observed readiness path /health does not match /readyz.",
+      "remediation": "Expose and monitor the declared readiness path in the promoted environment."
+    }
+  ]
+}

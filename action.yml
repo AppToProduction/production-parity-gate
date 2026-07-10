@@ -1,0 +1,29 @@
+name: Production Parity Gate
+description: Check a declared preview/production contract without printing environment values.
+author: Aaron
+branding:
+  icon: check-circle
+  color: blue
+inputs:
+  contract:
+    description: Path to the YAML contract, relative to the repository root.
+    required: false
+    default: parity.contract.yml
+  output:
+    description: Directory for Markdown and JSON evidence.
+    required: false
+    default: parity-evidence
+  allow-findings:
+    description: Report findings without failing the workflow.
+    required: false
+    default: "false"
+outputs:
+  finding-count:
+    description: Total number of parity findings.
+  evidence-json:
+    description: Path to the generated JSON evidence.
+  evidence-markdown:
+    description: Path to the generated Markdown evidence.
+runs:
+  using: node20
+  main: dist/action/index.cjs

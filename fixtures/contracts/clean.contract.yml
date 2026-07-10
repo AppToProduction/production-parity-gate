@@ -1,0 +1,35 @@
+version: 1
+project: checkout-clean-fixture
+publicPrefixes: [VITE_]
+sensitiveNamePatterns:
+  - SECRET
+  - TOKEN
+  - PASSWORD
+  - PRIVATE
+  - API_KEY
+  - DATABASE_URL
+environments:
+  preview:
+    envFile: ../vite-app/.env.preview-clean
+    requiredServerVars: [DATABASE_URL, SESSION_SECRET, STRIPE_WEBHOOK_SECRET]
+    origin: https://preview.example.test
+    callbackUrls: [https://preview.example.test/auth/callback]
+    endpoints:
+      api: /api
+      readiness: /readyz
+    observedFile: ../observed/preview-clean.json
+    clientBundle:
+      directory: ../client-dist/preview-clean
+      maxFileBytes: 2000000
+  production:
+    envFile: ../vite-app/.env.production-clean
+    requiredServerVars: [DATABASE_URL, SESSION_SECRET, STRIPE_WEBHOOK_SECRET]
+    origin: https://app.example.test
+    callbackUrls: [https://app.example.test/auth/callback]
+    endpoints:
+      api: /api
+      readiness: /readyz
+    observedFile: ../observed/production-clean.json
+    clientBundle:
+      directory: ../client-dist/production-clean
+      maxFileBytes: 2000000

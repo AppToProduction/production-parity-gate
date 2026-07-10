@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": "checkout-clean-fixture",
+  "contractSha256": "6bff0b6cd85876ddc321deeb44b72ba5e28a7fc61e0f2c4e936d10e38ad465d9",
+  "generatedAt": "2026-07-10T21:03:06.554Z",
+  "status": "pass",
+  "findingCount": 0,
+  "checks": {
+    "environmentsChecked": [
+      "preview",
+      "production"
+    ],
+    "classesChecked": [
+      "MISSING_SERVER_VAR",
+      "PUBLIC_SECRET_NAME",
+      "ORIGIN_MISMATCH",
+      "CALLBACK_MISMATCH",
+      "API_ENDPOINT_MISMATCH",
+      "READINESS_ENDPOINT_MISMATCH",
+      "CLIENT_BUNDLE_SECRET_LEAK"
+    ]
+  },
+  "findings": []
+}

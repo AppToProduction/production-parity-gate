@@ -1,0 +1,14 @@
+node_modules/
+dist/*
+!dist/action/
+dist/action/*
+!dist/action/index.cjs
+fixtures/client-dist/
+runs/demo-*/
+runs/ci-*/
+runs/action-*/
+.env
+.env.local
+*.log
+!runs/2026-07-10-local/logs/verification.log
+.DS_Store

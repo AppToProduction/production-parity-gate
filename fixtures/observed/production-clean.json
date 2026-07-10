@@ -1,0 +1,8 @@
+{
+  "origin": "https://app.example.test",
+  "callbackUrls": ["https://app.example.test/auth/callback"],
+  "endpoints": {
+    "api": "/api",
+    "readiness": "/readyz"
+  }
+}

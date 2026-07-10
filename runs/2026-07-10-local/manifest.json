@@ -1,0 +1,46 @@
+{
+  "runId": "2026-07-10-local",
+  "status": "passed",
+  "platform": "windows",
+  "node": "24.16.0",
+  "npm": "11.13.0",
+  "supportTarget": "node >=20",
+  "commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "exitCode": 0,
+      "result": "238 packages installed from package-lock.json"
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0,
+      "result": "typecheck, lint, build, 4 tests, controls, repository validation, and secret signature scan passed"
+    },
+    {
+      "command": "node dist/action/index.cjs with clean Action inputs",
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    {
+      "command": "node dist/cli.js check --contract fixtures/contracts/clean.contract.yml --output runs/2026-07-10-local/clean",
+      "exitCode": 0,
+      "findingCount": 0
+    },
+    {
+      "command": "node dist/cli.js check --contract fixtures/contracts/findings.contract.yml --output runs/2026-07-10-local/findings",
+      "exitCode": 2,
+      "findingCount": 7
+    }
+  ],
+  "outputs": [
+    "runs/2026-07-10-local/clean/evidence.json",
+    "runs/2026-07-10-local/clean/summary.md",
+    "runs/2026-07-10-local/findings/evidence.json",
+    "runs/2026-07-10-local/findings/summary.md"
+  ],
+  "secrets": "Synthetic fixtures only; reports contain names, not values.",
+  "skipped": [
+    "Playwright: no browser-facing product path; Vite build artifacts are scanned directly.",
+    "Live deployment probe: outside the deterministic local contract boundary."
+  ]
+}
