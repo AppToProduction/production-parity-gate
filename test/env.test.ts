@@ -8,6 +8,8 @@ describe("parseEnv", () => {
 export API_URL=https://example.test
 TOKEN="synthetic value"
 PLAIN=value # trailing comment
+ANCHOR=https://example.test/#section
+HASH=alpha#beta
 INVALID LINE
 `);
 
@@ -15,6 +17,15 @@ INVALID LINE
       API_URL: "https://example.test",
       TOKEN: "synthetic value",
       PLAIN: "value",
+      ANCHOR: "https://example.test/#section",
+      HASH: "alpha#beta",
     });
+  });
+
+  it("strips a long whitespace-delimited comment in linear time", () => {
+    const padding = " ".repeat(100_000);
+    const parsed = parseEnv(`LONG=value${padding}# comment`);
+
+    expect(parsed.get("LONG")).toBe("value");
   });
 });

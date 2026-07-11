@@ -1,3 +1,14 @@
+function stripInlineComment(value: string): string {
+  for (let index = 1; index < value.length; index += 1) {
+    const previous = value[index - 1];
+    if (value[index] === "#" && (previous === " " || previous === "\t")) {
+      return value.slice(0, index).trimEnd();
+    }
+  }
+
+  return value.trimEnd();
+}
+
 export function parseEnv(text: string): Map<string, string> {
   const entries = new Map<string, string>();
 
@@ -20,7 +31,7 @@ export function parseEnv(text: string): Map<string, string> {
     ) {
       value = value.slice(1, -1);
     } else {
-      value = value.replace(/\s+#.*$/u, "").trimEnd();
+      value = stripInlineComment(value);
     }
 
     entries.set(key, value);
