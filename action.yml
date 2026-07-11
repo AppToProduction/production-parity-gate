@@ -25,5 +25,5 @@ outputs:
   evidence-markdown:
     description: Path to the generated Markdown evidence.
 runs:
-  using: node20
+  using: node24
   main: dist/action/index.cjs
