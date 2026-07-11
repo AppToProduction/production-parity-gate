@@ -1,6 +1,6 @@
 # Production Parity Gate
 
-[![CI](https://github.com/VJO-JavaScript/production-parity-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/VJO-JavaScript/production-parity-gate/actions/workflows/ci.yml)
+[![CI](https://github.com/AppToProduction/production-parity-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/AppToProduction/production-parity-gate/actions/workflows/ci.yml)
 
 ![Production Parity Gate comparing preview and production across seven drift findings](assets/social-preview.png)
 
@@ -53,7 +53,7 @@ Exit code `0` means pass, `2` means findings, and `1` means invalid input or a r
 ## Use the GitHub Action
 
 ```yaml
-- uses: VJO-JavaScript/production-parity-gate@main
+- uses: AppToProduction/production-parity-gate@main
   with:
     contract: parity.contract.yml
     output: parity-evidence
